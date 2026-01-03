@@ -2,13 +2,10 @@ import database
 
 db = database.Database()
 
-
-
 class todoList:
 
     #Initialize database
     db.init_db()
-
 
     #Add Tasks
     def add_task(self, title:str, description:str):
