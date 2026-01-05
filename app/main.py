@@ -1,16 +1,13 @@
 import bcrypt
 import todo
 import auth
+import secrets
 
 
 
 def main():
-    authentication = auth.Authentication()
+    print(secrets.token_hex(32))
 
-
-    loginResult = authentication.login("murhi@gmail.com", "571632gemi")
-
-    print("Login successful:", loginResult)
 
 if __name__ == "__main__":
     main()
