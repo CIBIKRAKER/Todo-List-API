@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - To-Do App</title>
+    <link rel="stylesheet" href="../static/style-index.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+
+    <button class="btn-signout">Sign out</button>
+
+    <div id="dashboard-wrapper">
+        <header>
+            <h1>Hello Ahmed</h1>
+        </header>
+
+        <div class="add-task-container">
+            <input type="text" id="task-input" placeholder="Write something here...">
+            <button id="add-btn">Add</button>
+        </div>
+
+        <div id="task-list">
+            
+            <div class="task-card">
+                <div class="task-left">
+                    <input type="checkbox">
+                    <span class="task-text">Do the dishes</span>
+                </div>
+                <div class="task-right">
+                    <i class="fa-regular fa-pen-to-square"></i>
+                    <i class="fa-regular fa-trash-can"></i>
+                </div>
+            </div>
+
+            <div class="task-card completed">
+                <div class="task-left">
+                    <input type="checkbox" checked>
+                    <span class="task-text">Take out the trash</span>
+                </div>
+                <div class="task-right">
+                    <i class="fa-regular fa-pen-to-square"></i>
+                    <i class="fa-regular fa-trash-can"></i>
+                </div>
+            </div>
+
+            <div class="task-card">
+                <div class="task-left">
+                    <input type="checkbox">
+                    <span class="task-text">Finish the To-Do App</span>
+                </div>
+                <div class="task-right">
+                    <i class="fa-regular fa-pen-to-square"></i>
+                    <i class="fa-regular fa-trash-can"></i>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

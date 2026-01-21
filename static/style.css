@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+body {
+    /* Background with gradient overlay to match image */
+    background: linear-gradient(rgba(141, 108, 122, 0.5), rgba(30, 39, 142, 0.7)), 
+                url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+#container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0 10%;
+}
+
+/* Left Side */
+#container-left {
+    max-width: 500px;
+}
+
+h1 { font-size: 3.5rem; font-weight: 400; }
+.subtitle { font-size: 1rem; margin-bottom: 40px; }
+
+#text-below { margin: 40px 0; line-height: 1.6; }
+#text-below p { margin-bottom: 15px; }
+
+.btn-primary {
+    background-color: #c58686;
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+/* Right Side - Glassmorphism Card */
+#auth-area {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    padding: 80px 40px 60px 40px;
+    height: 550px;
+    border-radius: 30px;
+    width: 450px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#auth-area h1 { margin-bottom: 40px; }
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+.btn-login {
+    background-color: #c58686;
+    color: white;
+    width: 180px;
+    padding: 15px;
+    border-radius: 15px;
+    border: none;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    padding: 30px 10%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+footer i { font-size: 2.5rem; }
+
+button:hover { opacity: 0.9; }
+
+
+/* Layout for Dashboard */
+#dashboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+/* Sign out button */
+.btn-signout {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #e0e0e0;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Add Task Input Group */
+.add-task-group {
+    display: flex;
+    margin: 40px 0;
+    width: 600px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.add-task-group input {
+    flex: 1;
+    border-radius: 0;
+    padding: 15px 25px;
+    font-style: italic;
+}
+
+.btn-add {
+    background-color: #f3baba;
+    border: none;
+    padding: 0 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+/* Task Items */
+#task-list {
+    width: 800px;
+}
+
+.task-item {
+    background: rgba(215, 222, 255, 0.9); /* Lavender color from image */
+    margin-bottom: 15px;
+    padding: 20px 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #444;
+}
+
+.task-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-style: italic;
+}
+
+.task-content input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.task-actions {
+    display: flex;
+    gap: 20px;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+/* Strikethrough for completed tasks */
+.task-item.completed span {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+/* Full Mobile Optimization */
+@media (max-width: 768px) {
+    #container-left {
+        display: none;
+    }
+
+    #container {
+        padding: 0 15px;
+        justify-content: center;
+    }
+
+    #auth-area {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    /* Stretch inputs and buttons */
+    .input-group, 
+    input, 
+    .btn-login, 
+    .btn-add {
+        width: 100% !important;
+    }
+
+    /* Stack dashboard add-bar */
+    .add-task-group {
+        width: 100%;
+        flex-direction: column;
+        background: transparent;
+        box-shadow: none;
+        gap: 10px;
+    }
+
+    .add-task-group input {
+        border-radius: 10px;
+    }
+
+    .btn-add {
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    #task-list {
+        width: 100%;
+    }
+
+    .task-item {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+}

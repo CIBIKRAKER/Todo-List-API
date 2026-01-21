@@ -1,0 +1,185 @@
+/* General Setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+body.dashboard-body {
+    background: linear-gradient(rgba(141, 108, 122, 0.5), rgba(30, 39, 142, 0.7)), 
+                url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+}
+
+/* Sign Out Button */
+.btn-signout {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #e0e0e0;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+/* Main Layout */
+#dashboard-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+/* Input Bar */
+.add-task-container {
+    display: flex;
+    width: 600px;
+    height: 55px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    margin-bottom: 50px;
+}
+
+#task-input {
+    flex: 1;
+    border: none;
+    padding: 0 25px;
+    font-style: italic;
+    outline: none;
+    font-size: 1rem;
+}
+
+#add-btn {
+    background-color: #f3baba; /* Pinkish button */
+    border: none;
+    width: 100px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+/* Task List Area */
+#task-list {
+    width: 850px;
+}
+
+/* Task Card Style */
+.task-card {
+    background: rgba(215, 222, 255, 0.9); /* Lavender color */
+    color: #444;
+    padding: 22px 35px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.task-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.task-text {
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+/* Checkbox Style */
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+/* Icons Style */
+.task-right {
+    display: flex;
+    gap: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Completed State */
+.task-card.completed .task-text {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+/* Hover Effects */
+button:hover, .task-right i:hover {
+    opacity: 0.7;
+}
+
+/* Mobile Optimization for Dashboard */
+@media (max-width: 768px) {
+    #dashboard-wrapper {
+        padding: 100px 15px 40px 15px; /* Added top padding to clear the signout button */
+    }
+
+    /* Give signout button more "breathing room" and make it easier to tap */
+    .btn-signout {
+        top: 25px;
+        left: 20px;
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+
+    /* Make Input Bar much larger and clickable */
+    .add-task-container {
+        width: 100%;
+        flex-direction: column;
+        height: auto;
+        background: transparent;
+        box-shadow: none;
+        gap: 12px;
+    }
+
+    #task-input {
+        width: 100%;
+        height: 65px; /* Increased height for better tap target */
+        border-radius: 15px;
+        font-size: 1.1rem;
+        padding: 10px 20px;
+    }
+
+    #add-btn {
+        width: 100%;
+        height: 40px; /* Bigger button */
+        border-radius: 15px;
+    }
+
+    /* Task List adjustments */
+    #task-list {
+        width: 100%;
+    }
+
+    .task-card {
+        padding: 20px;
+        margin-bottom: 15px;
+    }
+
+    .task-text {
+        font-size: 1rem;
+    }
+}
