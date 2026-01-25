@@ -28,23 +28,24 @@
         <div id="container-right">
             <div id="auth-area">
                 <h1>Register</h1>
-                
-                <div class="input-group">
-                    <i class="fa-regular fa-user"></i>
-                    <input type="text" name="name" placeholder="Name">
-                </div>
+                <form method="POST" action="/register">
+                    <div class="input-group">
+                        <i class="fa-regular fa-user"></i>
+                        <input type="text" name="name" placeholder="Name">
+                    </div>
 
-                <div class="input-group">
-                    <i class="fa-regular fa-envelope"></i>
-                    <input type="email" name="email" placeholder="Email">
-                </div>
+                    <div class="input-group">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" name="email" placeholder="Email">
+                    </div>
 
-                <div class="input-group">
-                    <i class="fa-solid fa-lock"></i>
-                    <input type="password" name="password" placeholder="Password">
-                </div>
+                    <div class="input-group">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" name="password" placeholder="Password">
+                    </div>
 
-                <button class="btn-login">Sign Up</button>
+                    <button class="btn-login">Sign Up</button>
+                </form>
                 
                 <p style="font-size: 0.8rem; margin-top: 15px;">
                     Already have an account? <a href="index.html" style="color: #c58686; text-decoration: none;">Log in</a>

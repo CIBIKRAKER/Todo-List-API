@@ -11,11 +11,10 @@ body.dashboard-body {
                 url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80');
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    min-height: 100vh;
     color: white;
 }
 
-/* Sign Out Button */
 .btn-signout {
     position: absolute;
     top: 20px;
@@ -28,7 +27,6 @@ body.dashboard-body {
     font-size: 0.9rem;
 }
 
-/* Main Layout */
 #dashboard-wrapper {
     display: flex;
     flex-direction: column;
@@ -42,28 +40,47 @@ header h1 {
     margin-bottom: 40px;
 }
 
-/* Input Bar */
+/* Updated Input Bar to support Title + Description */
 .add-task-container {
     display: flex;
     width: 600px;
-    height: 55px;
+    min-height: 100px; /* Increased for two inputs */
+    background: white;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     margin-bottom: 50px;
 }
 
-#task-input {
+.input-stack {
+    display: flex;
+    flex-direction: column;
     flex: 1;
+}
+
+#task-input, #desc-input {
     border: none;
-    padding: 0 25px;
-    font-style: italic;
+    padding: 15px 25px;
     outline: none;
-    font-size: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+#task-input {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+#desc-input {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #666;
+    height: 60px;
+    resize: none;
+    border-top: 1px solid #eee;
 }
 
 #add-btn {
-    background-color: #f3baba; /* Pinkish button */
+    background-color: #f3baba;
     border: none;
     width: 100px;
     font-size: 1.1rem;
@@ -75,9 +92,8 @@ header h1 {
     width: 850px;
 }
 
-/* Task Card Style */
 .task-card {
-    background: rgba(215, 222, 255, 0.9); /* Lavender color */
+    background: rgba(215, 222, 255, 0.9);
     color: #444;
     padding: 22px 35px;
     border-radius: 20px;
@@ -90,23 +106,34 @@ header h1 {
 
 .task-left {
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Aligned to top for description layout */
     gap: 20px;
+}
+
+.task-content {
+    display: flex;
+    flex-direction: column;
 }
 
 .task-text {
     font-style: italic;
     font-size: 1.1rem;
+    font-weight: 400;
 }
 
-/* Checkbox Style */
+.task-description {
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: 5px;
+}
+
 input[type="checkbox"] {
     width: 20px;
     height: 20px;
     cursor: pointer;
+    margin-top: 4px;
 }
 
-/* Icons Style */
 .task-right {
     display: flex;
     gap: 20px;
@@ -115,71 +142,21 @@ input[type="checkbox"] {
     color: #333;
 }
 
-/* Completed State */
-.task-card.completed .task-text {
+.task-card.completed .task-text, 
+.task-card.completed .task-description {
     text-decoration: line-through;
     opacity: 0.5;
 }
 
-/* Hover Effects */
 button:hover, .task-right i:hover {
     opacity: 0.7;
 }
 
-/* Mobile Optimization for Dashboard */
+/* Mobile adjustments preserved and updated for stack */
 @media (max-width: 768px) {
-    #dashboard-wrapper {
-        padding: 100px 15px 40px 15px; /* Added top padding to clear the signout button */
-    }
-
-    /* Give signout button more "breathing room" and make it easier to tap */
-    .btn-signout {
-        top: 25px;
-        left: 20px;
-        padding: 12px 20px;
-        font-size: 1rem;
-    }
-
-    header h1 {
-        font-size: 2.2rem;
-        text-align: center;
-    }
-
-    /* Make Input Bar much larger and clickable */
-    .add-task-container {
-        width: 100%;
-        flex-direction: column;
-        height: auto;
-        background: transparent;
-        box-shadow: none;
-        gap: 12px;
-    }
-
-    #task-input {
-        width: 100%;
-        height: 65px; /* Increased height for better tap target */
-        border-radius: 15px;
-        font-size: 1.1rem;
-        padding: 10px 20px;
-    }
-
-    #add-btn {
-        width: 100%;
-        height: 40px; /* Bigger button */
-        border-radius: 15px;
-    }
-
-    /* Task List adjustments */
-    #task-list {
-        width: 100%;
-    }
-
-    .task-card {
-        padding: 20px;
-        margin-bottom: 15px;
-    }
-
-    .task-text {
-        font-size: 1rem;
-    }
+    #dashboard-wrapper { padding: 100px 15px 40px 15px; }
+    .add-task-container { width: 100%; flex-direction: column; height: auto; background: transparent; box-shadow: none; gap: 12px; }
+    #task-input, #desc-input { width: 100%; border-radius: 15px; background: white; }
+    #add-btn { width: 100%; height: 50px; border-radius: 15px; }
+    #task-list { width: 100%; }
 }

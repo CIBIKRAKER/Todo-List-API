@@ -17,17 +17,23 @@
             <h1>Hello Ahmed</h1>
         </header>
 
-        <div class="add-task-container">
-            <input type="text" id="task-input" placeholder="Write something here...">
-            <button id="add-btn">Add</button>
-        </div>
+        <form class="add-task-container" method="POST" action="/add_task">
+            <div class="input-stack">
+                <input type="text" name="title" id="task-input" placeholder="Task Title..." required>
+                <textarea name="description" id="desc-input" placeholder="Add a description..."></textarea>
+            </div>
+            <button type="submit" id="add-btn">Add</button>
+        </form>
 
         <div id="task-list">
             
             <div class="task-card">
                 <div class="task-left">
                     <input type="checkbox">
-                    <span class="task-text">Do the dishes</span>
+                    <div class="task-content">
+                        <span class="task-text">Do the dishes</span>
+                        <p class="task-description">Clean the pots and the air fryer specifically.</p>
+                    </div>
                 </div>
                 <div class="task-right">
                     <i class="fa-regular fa-pen-to-square"></i>
@@ -38,18 +44,10 @@
             <div class="task-card completed">
                 <div class="task-left">
                     <input type="checkbox" checked>
-                    <span class="task-text">Take out the trash</span>
-                </div>
-                <div class="task-right">
-                    <i class="fa-regular fa-pen-to-square"></i>
-                    <i class="fa-regular fa-trash-can"></i>
-                </div>
-            </div>
-
-            <div class="task-card">
-                <div class="task-left">
-                    <input type="checkbox">
-                    <span class="task-text">Finish the To-Do App</span>
+                    <div class="task-content">
+                        <span class="task-text">Finish the To-Do App</span>
+                        <p class="task-description">Make it look good with descriptions and Flask.</p>
+                    </div>
                 </div>
                 <div class="task-right">
                     <i class="fa-regular fa-pen-to-square"></i>
